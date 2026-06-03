@@ -1,7 +1,7 @@
 name: Dependencies and Cache
-Description: This workflow is to create actions for checkout code and actions Dependencies
+description: This workflow is to create actions for checkout code and actions Dependencies
 runs:
-  using: 'Composite'
+  using: 'composite'
   steps:
     - name: Cache Dependencies
       id: cached
