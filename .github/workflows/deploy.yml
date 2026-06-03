@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Load & Cache Deps
+      - name: Load & Cache Depss
         uses: ./.github/actions/cache-deps
       - name: Build website
         run: npm run build
