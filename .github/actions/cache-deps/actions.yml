@@ -1,0 +1,15 @@
+name: Dependencies and Cache
+Description: This workflow is to create actions for checkout code and actions Dependencies
+runs:
+  using: 'Composite'
+  steps:
+    - name: Cache Dependencies
+      id: cached
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    - name: Install Deps
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
